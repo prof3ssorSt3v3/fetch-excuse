@@ -3,7 +3,10 @@
 import fetch from 'node-fetch';
 
 exports.handler = async function (event, context) {
-    let url = 'https://theexcusegoose.com/generate/';
+    let who = 'programmer';
+    let why = 'my code is compiling';
+    let what = 'waiting';
+    let url = `https://function.xkcd-excuse.com/v1/excuse?who=${who}&why=${why}&what=${what}`;
     let response, body;
     try{
         response = await fetch(url);
@@ -19,7 +22,7 @@ exports.handler = async function (event, context) {
 
     return {
       "statusCode": response.status,
-      "headers": { "Content-Type": "application/json", "Access-Control-Allow-Origin": "*" },
+      "headers": { "Access-Control-Allow-Origin": "*", "Content-Type": "application/json" },
       "body": JSON.stringify(body)
     };
   };
