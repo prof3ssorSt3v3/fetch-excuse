@@ -7,7 +7,7 @@ exports.handler = async function (event, context) {
     let response, body;
     try{
         response = await fetch(url);
-        body = await response.text();
+        body = await response.json();
     }catch(err){
         return {
             statusCode: err.statusCode || 500,
@@ -20,6 +20,6 @@ exports.handler = async function (event, context) {
     return {
       "statusCode": response.status,
       "headers": { "Content-Type": "application/json", "Access-Control-Allow-Origin": "*" },
-      "body": body,
+      "body": JSON.stringify(body)
     };
   };
