@@ -12,7 +12,7 @@ exports.handler = async function (event, context) {
         response = await fetch(url);
         body = await response.json();
         console.log(body);
-        
+
     }catch(err){
         return {
             statusCode: err.statusCode || 500,
@@ -23,7 +23,7 @@ exports.handler = async function (event, context) {
     }
 
     return {
-      "statusCode": response.status,
+      "statusCode": 200,
       "headers": { "Access-Control-Allow-Origin": "*", "Content-Type": "application/json" },
       "body": JSON.stringify(body)
     };
