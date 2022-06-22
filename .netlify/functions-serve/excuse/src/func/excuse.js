@@ -5572,11 +5572,11 @@ function fixResponseChunkedTransferBadEnding(request, errorCallback) {
 }
 
 // func/excuse.js
-var API_ENDPOINT = "https://theexcusegoose.com/generate/";
 exports.handler = async function(event, context) {
+  let url = "https://theexcusegoose.com/generate/";
   let response, body;
   try {
-    response = await fetch(API_ENDPOINT);
+    response = await fetch(url);
     body = await response.text();
   } catch (err) {
     return {
