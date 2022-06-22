@@ -1,9 +1,7 @@
 [build]
   publish = "."
-  # the root website directory
-  command = "echo 'I be building' "
-  # the build command
-  functions = "func/"
+  command = "npm run build"
+  functions = "functions/"
 
 [[redirects]]
   from = "/api/*"
