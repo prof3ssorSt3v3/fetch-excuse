@@ -11,6 +11,8 @@ exports.handler = async function (event, context) {
     try{
         response = await fetch(url);
         body = await response.json();
+        console.log(body);
+        
     }catch(err){
         return {
             statusCode: err.statusCode || 500,
