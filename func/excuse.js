@@ -1,5 +1,5 @@
 // /.netlify/functions/excuse
-const fetch = require('node-fetch')
+import fetch from 'node-fetch';
 
 const API_ENDPOINT = 'https://theexcusegoose.com/generate/';
 
