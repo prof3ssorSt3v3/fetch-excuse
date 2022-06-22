@@ -5,10 +5,10 @@ import fetch from 'node-fetch';
 const API_ENDPOINT = 'https://theexcusegoose.com/generate/';
 
 exports.handler = async function (event, context) {
-    let response;
+    let response, body;
     try{
         response = await fetch(API_ENDPOINT);
-        const body = await response.text();
+        body = await response.text();
     }catch(err){
         return {
             statusCode: err.statusCode || 500,
