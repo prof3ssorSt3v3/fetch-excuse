@@ -7,6 +7,7 @@ exports.handler = async function (event, context) {
     let why = 'my code is compiling';
     let what = 'waiting';
     let url = `https://function.xkcd-excuse.com/v1/excuse?who=${who}&why=${why}&what=${what}`;
+    url='https://jsonplaceholder.typicode.com/users';
     let response, body;
     try{
         response = await fetch(url);
